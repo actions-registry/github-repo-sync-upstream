@@ -1,0 +1,25 @@
+name: GitHub Sync to Upstream Repository
+description: Sync and rebase the current repository with the upstream.
+author: The actions-registry Authors <https://github.com/actions-registry>
+
+inputs:
+  source_repo:
+    description: GitHub public repo slug or full https clone url (with access_token if needed)
+    required: true
+  source_branch:
+    description: Branch name to sync from
+    required: true
+  destination_branch:
+    description: Branch name to sync to in this repo
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.source_repo }}
+    - ${{ inputs.source_branch }}:${{ inputs.destination_branch }}
+
+branding:
+  icon: 'git-merge'
+  color: 'black'
