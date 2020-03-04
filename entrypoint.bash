@@ -30,7 +30,7 @@ if [[ -z "$BRANCH_MAPPING" ]]; then
 fi
 
 if ! echo "$UPSTREAM_REPO" | grep '\.git'; then
-  UPSTREAM_REPO="https://github.com/${UPSTREAM_REPO_PATH}.git"
+  UPSTREAM_REPO="https://github.com/${UPSTREAM_REPO}.git"
 fi
 
 echo "UPSTREAM_REPO=$UPSTREAM_REPO"
